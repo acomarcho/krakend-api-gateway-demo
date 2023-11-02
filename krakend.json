@@ -1,0 +1,48 @@
+{
+  "$schema": "https://www.krakend.io/schema/krakend.json",
+  "version": 3,
+  "name": "KrakenD - API Gateway",
+  "timeout": "3000ms",
+  "cache_ttl": "300s",
+  "output_encoding": "json",
+  "endpoints": [
+    {
+      "endpoint": "/doctors/{doctorType}",
+      "method": "GET",
+      "output_encoding": "json",
+      "backend": [
+        {
+          "url_pattern": "/grandOak/doctors/{doctorType}",
+          "encoding": "json",
+          "sd": "static",
+          "method": "GET",
+          "host": ["http://host.docker.internal:9091"],
+          "disable_host_sanitize": false,
+          "target": "doctors"
+        },
+        {
+          "url_pattern": "/pineValley/doctors/{doctorType}",
+          "encoding": "json",
+          "sd": "static",
+          "method": "GET",
+          "host": ["http://host.docker.internal:9092"],
+          "disable_host_sanitize": false,
+          "target": "doctors",
+          "mapping": {
+            "doctor": "pineValleyDoctors"
+          }
+        }
+      ],
+      "extra_config": {
+        "proxy": {
+          "flatmap_filter": [
+            {
+              "type": "append",
+              "args": ["pineValleyDoctors", "doctor"]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
