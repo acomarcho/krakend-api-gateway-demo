@@ -1,6 +1,8 @@
 # krakend-api-gateway-demo
 Demo of KrakenD's API gateway functionality using Grand Oak &amp; Pine Valley Hospital Mock API
 
+![image](https://github.com/acomarcho/krakend-api-gateway-demo/assets/29671825/a527660f-e6c1-4ceb-8248-34a628772edc)
+
 # How to start the services
 
 ## Starting the mock backend
