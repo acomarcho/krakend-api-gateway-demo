@@ -17,8 +17,7 @@
           "sd": "static",
           "method": "GET",
           "host": ["http://mock-backend:9091"],
-          "disable_host_sanitize": false,
-          "target": "doctors"
+          "disable_host_sanitize": false
         },
         {
           "url_pattern": "/pineValley/doctors/{doctorType}",
@@ -27,9 +26,8 @@
           "method": "GET",
           "host": ["http://pinevalley-adapter:8080"],
           "disable_host_sanitize": false,
-          "target": "doctors",
           "mapping": {
-            "doctor": "pineValleyDoctors"
+            "doctors": "pineValleyDoctors"
           }
         }
       ],
@@ -38,7 +36,11 @@
           "flatmap_filter": [
             {
               "type": "append",
-              "args": ["pineValleyDoctors", "doctor"]
+              "args": ["pineValleyDoctors.doctor", "doctors.doctor"]
+            },
+            {
+              "type": "del",
+              "args": ["pineValleyDoctors"]
             }
           ]
         }

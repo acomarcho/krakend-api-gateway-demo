@@ -13,6 +13,8 @@ services:
     build:
       context: ./pinevalley-adapter
       dockerfile: Dockerfile
+    volumes:
+      - ./pinevalley-adapter:/app
     hostname: pinevalley-adapter
     depends_on:
       - mock-backend
