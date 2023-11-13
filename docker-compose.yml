@@ -8,9 +8,6 @@ services:
     volumes:
       - ./krakend.json:/etc/krakend/krakend.json
     hostname: api-gateway
-    depends_on:
-      - pinevalley-adapter
-      - mock-backend
 
   pinevalley-adapter:
     build:
