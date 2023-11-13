@@ -16,7 +16,7 @@
           "encoding": "json",
           "sd": "static",
           "method": "GET",
-          "host": ["http://host.docker.internal:9091"],
+          "host": ["http://mock-backend:9091"],
           "disable_host_sanitize": false,
           "target": "doctors"
         },
@@ -25,7 +25,7 @@
           "encoding": "json",
           "sd": "static",
           "method": "GET",
-          "host": ["http://host.docker.internal:9092"],
+          "host": ["http://pinevalley-adapter:8080"],
           "disable_host_sanitize": false,
           "target": "doctors",
           "mapping": {

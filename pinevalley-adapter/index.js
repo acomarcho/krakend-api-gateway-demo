@@ -8,7 +8,7 @@ app.get("/pineValley/doctors/:doctorType", async (req, res) => {
   try {
     const { doctorType } = req.params;
     const { data } = await axios.post(
-      "http://localhost:9090/pineValley/doctors",
+      "http://mock-backend:9090/pineValley/doctors",
       {
         doctorType: doctorType,
       }
@@ -20,7 +20,7 @@ app.get("/pineValley/doctors/:doctorType", async (req, res) => {
   }
 });
 
-// Start the server on port 9092
-app.listen(9092, () => {
-  console.log("Server is running on port 9092");
+// Start the server on port 8080
+app.listen(8080, () => {
+  console.log("Server is running on port 8080");
 });

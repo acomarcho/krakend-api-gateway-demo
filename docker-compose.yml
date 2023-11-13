@@ -1,0 +1,27 @@
+version: "3.9"
+
+services:
+  api-gateway:
+    image: devopsfaith/krakend
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./krakend.json:/etc/krakend/krakend.json
+    hostname: api-gateway
+    depends_on:
+      - pinevalley-adapter
+      - mock-backend
+
+  pinevalley-adapter:
+    build:
+      context: ./pinevalley-adapter
+      dockerfile: Dockerfile
+    hostname: pinevalley-adapter
+    depends_on:
+      - mock-backend
+
+  mock-backend:
+    build:
+      context: ./mock-backend
+      dockerfile: Dockerfile
+    hostname: mock-backend
