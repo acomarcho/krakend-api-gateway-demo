@@ -6,6 +6,11 @@ Demo of KrakenD's API gateway functionality using Grand Oak &amp; Pine Valley Ho
 
 # How to start the services
 
+Run this command:
+`docker-compose up`
+
+Or if you want to run the services individually, follow these steps:
+
 ## Starting the mock backend
 
 To run the mock backend, simply use this command:
