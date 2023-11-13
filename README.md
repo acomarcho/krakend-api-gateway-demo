@@ -1,4 +1,5 @@
 # krakend-api-gateway-demo
+
 Demo of KrakenD's API gateway functionality using Grand Oak &amp; Pine Valley Hospital Mock API
 
 ![image](https://github.com/acomarcho/krakend-api-gateway-demo/assets/29671825/5e9ee6f7-5861-4407-96cd-785005b92cb4)
@@ -32,6 +33,7 @@ To run the API gateway, do these sequence of commands:
 ## Querying the mock backend
 
 These are the valid values for doctor type:
+
 1. Ophthalmologist
 2. Physician
 3. Pediatrician
@@ -41,6 +43,7 @@ These are the valid values for doctor type:
 `GET http://localhost:9091/grandOak/doctors/<doctorType>`
 
 Here is the response:
+
 ```
 {
     "doctors": {
@@ -71,6 +74,7 @@ Here is the response:
 ```
 
 Here is the response:
+
 ```
 {
     "doctors": {
@@ -95,6 +99,7 @@ Here is the response:
 `GET http://localhost:9092/pineValley/doctors/<doctorType>`
 
 Here is the response:
+
 ```
 {
     "doctors": {
@@ -119,29 +124,32 @@ Here is the response:
 `GET http://localhost:8080/doctors/<doctorType>`
 
 Here is the response:
+
 ```
 {
-    "doctor": [
-        {
-            "hospital": "Grand Oak",
-            "name": "Bob Watson",
-            "time": "05:30 PM"
-        },
-        {
-            "hospital": "Grand Oak",
-            "name": "Paul Johnson",
-            "time": "07:30 AM"
-        },
-        {
-            "hospital": "pineValley",
-            "name": "Bob Watson",
-            "time": "07:30 AM"
-        },
-        {
-            "hospital": "pineValley",
-            "name": "Wilson Mcdonald",
-            "time": "07:30 AM"
-        }
-    ]
+    "doctors": {
+        "doctor": [
+            {
+                "hospital": "Grand Oak",
+                "name": "John Mathew",
+                "time": "03:30 PM"
+            },
+            {
+                "hospital": "Grand Oak",
+                "name": "Allan Silvester",
+                "time": "04:30 PM"
+            },
+            {
+                "hospital": "pineValley",
+                "name": "John Mathew",
+                "time": "07:30 AM"
+            },
+            {
+                "hospital": "pineValley",
+                "name": "Roma Katherine",
+                "time": "04:30 PM"
+            }
+        ]
+    }
 }
 ```
